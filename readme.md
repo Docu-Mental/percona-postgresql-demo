@@ -1,24 +1,6 @@
-# Contents {#contents .TOC-Heading}
-
-[Overview [1](#overview)](#overview)
-
-[Setting up Docker [1](#_Toc241599250)](#_Toc241599250)
-
-[Creating the Database [1](#_Toc241599251)](#_Toc241599251)
-
-[Testing [2](#testing)](#testing)
-
-[Before Optimization [2](#before-optimization)](#before-optimization)
-
-[Optimization [2](#optimization)](#optimization)
-
-[After Optimization [2](#_Toc241599255)](#_Toc241599255)
-
-[Test Conclusion [3](#_Toc241599256)](#_Toc241599256)
-
 # Overview
 
-[]{#_Toc241599250 .anchor}This is a simple demonstration of one way in which PostgreSQL's \"EXPLAIN ANALYZE\" feature and the pg_stat_monitor tool provided by Percona can be used to investigate query performance.
+This is a simple demonstration of one way in which PostgreSQL's \"EXPLAIN ANALYZE\" feature and the pg_stat_monitor tool provided by Percona can be used to investigate query performance.
 
 > **Note**  
 > \"EXPLAIN ANALYZE\" can be used to show execution statistics for a single execution of a query.
@@ -26,7 +8,7 @@
 
 # Setting up Docker
 
-[]{#_Toc241599251 .anchor}A Percona Distribution for PostgreSQL image is available for Docker. I created a docker-compose.yml file to pull the image and configure it to preload the library needed by pg_stat_monitor.
+A Percona Distribution for PostgreSQL image is available for Docker. I created a docker-compose.yml file to pull the image and configure it to preload the library needed by pg_stat_monitor.
 
 # Creating the Database
 
@@ -55,17 +37,17 @@ I then ran \"EXPLAIN ANALYZE\" to examine the execution plan and actual executio
 
 I then queried pg_stat_monitor for statistics about the test query. The result showed a mean execution time of 5.11 ms across the five calls.
 
-![](./media/media/image1.png){width="6.27in" height="1.21in"}
+![](./media/media/image1.png)
 
-![](./media/media/image2.png){width="6.27in" height="1.07in"}
+![](./media/media/image2.png)
 
 ## Optimization
 
-[]{#_Toc241599255 .anchor}I created an index on the customer_id column of the orders table.
+I created an index on the customer_id column of the orders table.
 
 ## After Optimization
 
-[]{#_Toc241599256 .anchor}I ran the test query again five times and then ran \"EXPLAIN ANALYZE\" and the pg_stat_monitor query again.
+I ran the test query again five times and then ran \"EXPLAIN ANALYZE\" and the pg_stat_monitor query again.
 
 The \"EXPLAIN ANALYZE\" result showed that a single execution of the test query took 0.092 ms.
 
