@@ -18,6 +18,8 @@ I used an SQL script to create a database with two tables:
 
 - orders (100,000 entries)
 
+See [sql/01-create-data.sql](sql/01-create-data.sql) for the full script.
+
 > **Note**  
 > In practice, I used the following command to both start the Docker image and run the script:
 >
@@ -26,6 +28,8 @@ I used an SQL script to create a database with two tables:
 > ```
 
 # Testing 
+
+See [sql/02-performance-test.sql](sql/02-performance-test.sql) for all scripts used in testing.
 
 ## Before Optimization
 
