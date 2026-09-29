@@ -18,14 +18,12 @@ I used an SQL script to create a database with two tables:
 
 - orders (100,000 entries)
 
-> **Note** 
-> In practice, I used the following command to both start the Docker image and run the script)
-> 
->   --------------------------------------------------------------------------------------------------
->   docker exec -i percona-postgres-demo \\ psql -U postgres -d kayak_shop \< sql/01-create-data.sql
->   --------------------------------------------------------------------------------------------------
->  
->   --------------------------------------------------------------------------------------------------
+> **Note**  
+> In practice, I used the following command to both start the Docker image and run the script:
+>
+> ```bash
+> docker exec -i percona-postgres-demo psql -U postgres -d kayak_shop < sql/01-create-data.sql
+> ```
 
 # Testing 
 
