@@ -1,9 +1,9 @@
 # Overview
 
-This is a simple demonstration of one way in which PostgreSQL's \"EXPLAIN ANALYZE\" feature and the pg_stat_monitor tool provided by Percona can be used to investigate query performance.
+This is a simple demonstration of one way in which PostgreSQL's "EXPLAIN ANALYZE" feature and the pg_stat_monitor tool provided by Percona can be used to investigate query performance.
 
 > **Note**  
-> \"EXPLAIN ANALYZE\" can be used to show execution statistics for a single execution of a query.  
+> "EXPLAIN ANALYZE" can be used to show execution statistics for a single execution of a query.  
 > pg_stat_monitor can be used to show aggregated statistics for multiple executions of a query.
 
 # Setting up Docker
@@ -35,7 +35,7 @@ See [sql/02-performance-test.sql](sql/02-performance-test.sql) for all scripts u
 
 I ran a simple test query to count how many orders belong to a particular customer ID. I repeated the same query five times so that pg_stat_monitor would have multiple executions from which to calculate an average.
 
-I then ran \"EXPLAIN ANALYZE\" to examine the execution plan and actual execution time for the query. The result showed that a single execution took 5.518 ms.
+I then ran "EXPLAIN ANALYZE" to examine the execution plan and actual execution time for the query. The result showed that a single execution took 5.518 ms.
 
 I then queried pg_stat_monitor for statistics about the test query. The result showed a mean execution time of 5.11 ms across the five calls.
 
@@ -49,19 +49,17 @@ I created an index on the customer_id column of the orders table.
 
 ## After Optimization
 
-I ran the test query again five times and then ran \"EXPLAIN ANALYZE\" and the pg_stat_monitor query again.
+I ran the test query again five times and then ran "EXPLAIN ANALYZE" and the pg_stat_monitor query again.
 
-The \"EXPLAIN ANALYZE\" result showed that a single execution of the test query took 0.092 ms.
+The "EXPLAIN ANALYZE" result showed that a single execution of the test query took 0.092 ms.
 
 The pg_stat_monitor result showed a mean execution time of 0.04 ms across the five calls.
 
 # Test Conclusion
 
-In this test, \"EXPLAIN ANALYZE\" showed a decrease in execution time from 5.518 ms to 0.092 ms after the index was added: a reduction of 5.426 ms (approximately 98%).
+In this test, "EXPLAIN ANALYZE" showed a decrease in execution time from 5.518 ms to 0.092 ms after the index was added: a reduction of 5.426 ms (approximately 98%).
 
 pg_stat_monitor showed a decrease in mean execution time from 5.11 ms to 0.04 ms across the five test calls: a reduction of 5.07 ms (approximately 99%).
-
-Note: These results are specific to this test dataset and environment.
 
 > **Note**  
 > These results are specific to this test dataset and environment. 
