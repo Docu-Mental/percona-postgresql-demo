@@ -8,7 +8,7 @@ This is a simple demonstration of one way in which PostgreSQL's \"EXPLAIN ANALYZ
 
 # Setting up Docker
 
-A Percona Distribution for PostgreSQL image is available for Docker. I created a docker-compose.yml file to pull the image and configure it to preload the library needed by pg_stat_monitor.
+A Percona Distribution for PostgreSQL image is available for Docker. I created a [docker-compose.yml file](docker-compose.yml) to pull the image and configure it to preload the library needed by pg_stat_monitor.
 
 # Creating the Database
 
