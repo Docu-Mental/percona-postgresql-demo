@@ -3,7 +3,7 @@
 This is a simple demonstration of one way in which PostgreSQL's \"EXPLAIN ANALYZE\" feature and the pg_stat_monitor tool provided by Percona can be used to investigate query performance.
 
 > **Note**  
-> \"EXPLAIN ANALYZE\" can be used to show execution statistics for a single execution of a query.
+> \"EXPLAIN ANALYZE\" can be used to show execution statistics for a single execution of a query.  
 > pg_stat_monitor can be used to show aggregated statistics for multiple executions of a query.
 
 # Setting up Docker
